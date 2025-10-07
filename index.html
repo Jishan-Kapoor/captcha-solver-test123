@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Captcha Solver</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+        .captcha-img {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Captcha Solver</h1>
+    <div class="captcha">
+        <img src="" alt="Captcha Image" class="captcha-img">
+        <input type="text" class="form-control" placeholder="Enter Captcha Text">
+        <button class="btn btn-primary">Submit</button>
+        <p class="result"></p>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/highlight.js@10.7.2/build/highlight.min.js"></script>
+    <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        const captchaUrl = urlParams.get('url');
+        if (captchaUrl) {
+            const captchaImgElement = document.querySelector('.captcha-img');
+            captchaImgElement.src = captchaUrl;
+
+            const submitButton = document.querySelector('button');
+            const resultText = document.querySelector('.result');
+
+            submitButton.addEventListener('click', () => {
+                const captchaInput = document.querySelector('input').value;
+                // Here goes the algorithm to solve captcha
+                // For demonstration, let's assume the captcha is solved as 'ABCD'
+
+                resultText.textContent = captchaInput === 'ABCD' ? 'Captcha Solved!' : 'Incorrect Captcha, Try Again!';
+            });
+        }
+    </script>
+</body>
+
+</html>
