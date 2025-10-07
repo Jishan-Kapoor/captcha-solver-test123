@@ -49,4 +49,27 @@
     </script>
 </body>
 
+<script>
+    // Additional script to handle SVG image URLs
+    window.addEventListener('DOMContentLoaded', () => {
+        const urlParams = new URLSearchParams(window.location.search);
+        const captchaUrl = urlParams.get('url');
+        if (captchaUrl && captchaUrl.endsWith('.svg')) {
+            const captchaImgElement = document.querySelector('.captcha-img');
+            captchaImgElement.src = captchaUrl;
+
+            const submitButton = document.querySelector('button');
+            const resultText = document.querySelector('.result');
+
+            submitButton.addEventListener('click', () => {
+                const captchaInput = document.querySelector('input').value;
+                // Here goes the algorithm to solve captcha
+                // For demonstration, let's assume the captcha is solved as 'ABCD'
+
+                resultText.textContent = captchaInput === 'ABCD' ? 'Captcha Solved!' : 'Incorrect Captcha, Try Again!';
+            });
+        }
+    });
+</script>
+
 </html>
