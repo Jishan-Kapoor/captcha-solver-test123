@@ -1,7 +1,7 @@
 # Captcha Solver Web Application
 
 ## Summary
-This static web application allows users to solve simple captchas by entering the correct text displayed in the image. The captcha images are preset samples.
+This static web application allows users to solve simple captchas by entering the correct text displayed in the image. The captcha images are preset samples, which now include both PNG and SVG formats.
 
 ## Setup
 To deploy this web app on GitHub Pages, follow these steps:
@@ -13,7 +13,7 @@ To deploy this web app on GitHub Pages, follow these steps:
 - To access the captcha solver page, open the web app URL.
 - There are no query parameters or configuration options available.
 - Key features:
-  - Display a random captcha image.
+  - Display a random captcha image (PNG or SVG).
   - Input field to enter the captcha text.
   - Verify button to check if the entered text is correct.
 
@@ -22,7 +22,7 @@ This application is implemented using HTML, CSS, and JavaScript.
 Key libraries or tools used:
 - None
 Important implementations:
-- Randomly select and display a preset captcha image.
+- Randomly select and display a preset captcha image in PNG or SVG format.
 - Check if the entered text matches the captcha text when the verify button is clicked.
 
 ## License
